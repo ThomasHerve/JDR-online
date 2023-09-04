@@ -1,0 +1,138 @@
+th {
+    background-color: #000000;
+    color: white;
+    height: 15%;
+    text-align:left;
+    padding: 10px;
+}
+
+
+/*##################################*/
+.card {
+    display: flex;
+    justify-content: center;
+}
+
+.background {
+    width: 1100px;
+    background: lightgray;
+}
+
+.inner-card {
+    margin: 50px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.header img {
+    width: 30%;
+    margin-left: 100px;
+}
+
+.input-name {
+    text-align: center;
+    height: 67px; /* replace with your input's height */
+    outline: none;
+    font-size: 40px;
+    width: 300px;
+}
+
+.input-origine {
+    text-align: center;
+    height: 67px; /* replace with your input's height */
+    outline: none;
+    font-size: 40px;
+    width: 250px;
+}
+
+.input-level {
+    text-align: center;
+    height: 67px; /* replace with your input's height */
+    outline: none;
+    font-size: 40px;
+    width: 150px;
+}
+
+/*##################################*/
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: center;
+    margin-left: 45px;
+}
+
+.stats th {
+    font-size: 13x;
+}
+
+.input-stat {
+    text-align: center;
+    width: 134px;
+    outline: none;
+    font-size: 40px;
+    height: 40px;
+}
+
+.chance {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 90%;
+    margin-left: 112px;
+}
+
+.input-chance {
+    text-align: center;
+    width: 134px;
+    outline: none;
+    font-size: 40px;
+    height: 40px;
+}
+
+.input-rang {
+    text-align: center;
+    width: 100px;
+    font-size: large;
+}
+
+/*##################################*/
+
+.main-carac {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-atout {
+    margin-left: 50px;
+}
+
+.defense {
+    display: flex; flex-direction: row;
+    margin-top: -5px;
+}
+
+.defense-title {
+    text-align: center;
+    width: 100px;
+    font-size: large;
+    background-color: #000000;
+    color: white;
+    height: 20px;
+}
+
+.defense-input {
+    text-align: center;
+    width: 50px;
+    outline: none;
+    font-size: 21px;
+}
+
+
+

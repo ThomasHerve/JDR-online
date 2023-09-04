@@ -1,0 +1,65 @@
+<div class="card">
+    <div class="background">
+        <div class="inner-card">
+            <div class="header">
+                <img src="https://cdn.wccftech.com/wp-content/uploads/2021/06/ER_KEY-ART-scaled-e1623411764381-2048x1052.jpg">
+                <table style="margin-left: 10px;">
+                    <tr>
+                      <th>Nom du personnage</th>
+                      <th>Origine</th>
+                      <th>Niveau</th>
+                    </tr>
+                    <tr>
+                      <td><input class="input-name" type="text"></td>
+                      <td><input class="input-origine" type="text"></td>
+                      <td><input class="input-level" type="number"></td>
+                    </tr>     
+                </table>
+            </div>
+            <div class = "stats">
+                <table style="margin-left: 10px;">
+                    <tr>
+                      <th *ngFor="let element of stats">{{element}}</th>
+                    </tr>
+                    <tr>
+                      <td *ngFor="element of stats"><input class="input-stat" type="number"></td>
+                    </tr>     
+                </table>
+            </div>
+            <div class="chance">
+                <table style="margin-left: 10px;">
+                    <tr>
+                      <th >Points de chance</th>
+                    </tr>
+                    <tr>
+                      <td><input class="input-chance" type="number"></td>
+                    </tr>     
+                </table>
+            </div>
+            <div class="main-carac">
+                <table style="margin-left: 10px;">
+                    <tr>
+                      <th >NOM</th>
+                      <th>ATOUT</th>
+                      <th>RANG</th>
+                    </tr>
+                    <tr *ngFor="let element of competences">
+                      <td>{{element[0]}} [{{element[1]}}]</td>
+                      <td><input class="input-atout" type="checkbox"></td>
+                      <td><input class="input-rang" type="number"></td>
+                    </tr>
+                </table>
+                <div style="margin-top: 7px; margin-left: 200px">
+                    <div class="defense">
+                        <table class="defense-title">
+                            <tr>
+                              <th >DEFENSE</th>
+                            </tr>
+                        </table>
+                        <input class="defense-input" type="number">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
