@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "jdr-online"
+  "defaultProject": "jdr-online",
+  "cli": {
+    "analytics": "514e50d4-12b8-4581-a055-e4ffdfadecec"
+  }
 }
