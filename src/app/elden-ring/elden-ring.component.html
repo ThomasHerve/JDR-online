@@ -36,28 +36,51 @@
                     </tr>     
                 </table>
             </div>
-            <div class="main-carac">
-                <table style="margin-left: 10px;">
-                    <tr>
-                      <th >NOM</th>
-                      <th>ATOUT</th>
-                      <th>RANG</th>
-                    </tr>
-                    <tr *ngFor="let element of competences">
-                      <td>{{element[0]}} [{{element[1]}}]</td>
-                      <td><input class="input-atout" type="checkbox"></td>
-                      <td><input class="input-rang" type="number"></td>
-                    </tr>
-                </table>
-                <div style="margin-top: 7px; margin-left: 200px">
-                    <div class="defense">
-                        <table class="defense-title">
+            <div style="display: flex; flex-direction: row; width: 100%; flex-flow: row;">
+                <div class="main-carac">
+                  <table style="margin-left: 10px;">
+                      <tr>
+                        <th >NOM</th>
+                        <th>ATOUT</th>
+                        <th>RANG</th>
+                      </tr>
+                      <tr *ngFor="let element of competences">
+                        <td>{{element[0]}} [{{element[1]}}]</td>
+                        <td><input class="input-atout" type="checkbox"></td>
+                        <td><input class="input-rang" type="number"></td>
+                      </tr>
+                  </table>
+                  <div style="display: flex; flex-direction: column; flex: 1 1 auto">
+                      <div class="defense">
+                          <table class="defense-title">
+                              <tr>
+                                <th >DEFENSE</th>
+                              </tr>
+                          </table>
+                          <input class="defense-input" type="number">
+                      </div>
+                      <div class="main-equipment">
+                        <div *ngFor="let element of equipment" class="equipment-row">
+                          <table *ngFor="let e of element" style="margin-left: 30px;">
                             <tr>
-                              <th >DEFENSE</th>
+                              <th colspan="4" style="text-align: center">{{e}}</th>
                             </tr>
-                        </table>
-                        <input class="defense-input" type="number">
-                    </div>
+                            <tr>
+                              <td>RD Phy</td>
+                              <td><input class="equipment-input" type="number"></td>
+                              <td>RD Poi</td>
+                              <td><input class="equipment-input" type="number"></td>
+                            </tr>
+                            <tr>
+                              <td>RD Phy</td>
+                              <td><input class="equipment-input" type="number"></td>
+                              <td></td>
+                              <td></td>
+                            </tr> 
+                          </table>
+                        </div>
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>

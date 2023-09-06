@@ -29,6 +29,20 @@ export class EldenRingComponent implements OnInit {
     ["Esoterisme", "INT"],
     ["Pilotage", "PER"]
   ]
+  equipment = [
+    [
+      "TETE (1-2)"
+    ],
+    [
+      "BRAS GAUCHE (9-11)", "BRAS DROIT (12-14)"
+    ],
+    [
+      "BUSTE (3-8)"
+    ],
+    [
+      "JAMBE GAUCHE (15-17)", "JAMBE DROITE (18-20)"
+    ]
+  ]
 
 
   constructor() { }

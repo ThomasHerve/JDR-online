@@ -107,6 +107,7 @@ th {
 .main-carac {
     display: flex;
     flex-direction: row;
+    width: 100%
 }
 
 .input-atout {
@@ -116,6 +117,8 @@ th {
 .defense {
     display: flex; flex-direction: row;
     margin-top: -5px;
+    margin-bottom: 40px;
+    justify-content: center;
 }
 
 .defense-title {
@@ -134,5 +137,22 @@ th {
     font-size: 21px;
 }
 
+/* Equipment */
 
+.main-equipment {
+    display: flex;
+    flex-direction: column;
+}
 
+.equipment-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.equipment-input {
+    text-align: center;
+    width: 60px;
+    font-size: medium;
+}
