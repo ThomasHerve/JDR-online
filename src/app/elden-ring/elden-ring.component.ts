@@ -44,6 +44,10 @@ export class EldenRingComponent implements OnInit {
     ]
   ]
 
+  armes = [
+    1,2,3
+  ]
+
 
   constructor() { }
 

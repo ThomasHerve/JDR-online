@@ -22,7 +22,7 @@
                       <th *ngFor="let element of stats">{{element}}</th>
                     </tr>
                     <tr>
-                      <td *ngFor="element of stats"><input class="input-stat" type="number"></td>
+                      <td *ngFor="let element of stats"><input class="input-stat" type="number"></td>
                     </tr>     
                 </table>
             </div>
@@ -35,6 +35,14 @@
                       <td><input class="input-chance" type="number"></td>
                     </tr>     
                 </table>
+            </div>
+            <div style="display: flex; flex-direction: row">
+              <div class="titre" style="margin-right: 200px;">
+                COMPETENCES
+              </div>
+              <div class="titre">
+                COMBAT
+              </div>
             </div>
             <div style="display: flex; flex-direction: row; width: 100%; flex-flow: row;">
                 <div class="main-carac">
@@ -83,6 +91,37 @@
                   </div>
                 </div>
             </div>
+            <div class="titre">
+              ARMES
+            </div>
+            <table style="margin-left: -35px;">
+              <tr>
+                <th >NOM</th>
+                <th>COMPETENCE</th>
+                <th>SR</th>
+                <th>ATOUT</th>
+                <th>DEGATS</th>
+                <th>EFFETS</th>
+                <th>TYPE</th>
+                <th>PORTEE</th>
+                <th>QUALITES</th>
+                <th>MUNITIONS</th>
+                <th>POIDS</th>
+              </tr>
+              <tr *ngFor="let arme of armes">
+                <td><textarea  rows="2" cols="13" style="font-size: 10px;"></textarea></td>
+                <td><textarea  rows="2" cols="18" style="font-size: 10px;"></textarea></td>
+                <td><input style="width: 40px; height: 22px; font-size: 20px; margin-top: -4px;" type="number"></td>
+                <td><input type="checkbox" style="margin-left: 30px"></td>
+                <td><input style="width: 80px; height: 22px; font-size: 20px; margin-top: -4px;" type="number"></td>
+                <td><textarea  rows="2" cols="13" style="font-size: 10px;"></textarea></td>
+                <td><textarea  rows="2" cols="13" style="font-size: 10px;"></textarea></td>
+                <td><input style="width: 75px; height: 22px; font-size: 20px; margin-top: -4px;" type="number"></td>
+                <td><textarea  rows="2" cols="13" style="font-size: 10px;"></textarea></td>
+                <td><input style="width: 105px; height: 22px; font-size: 20px; margin-top: -4px;" type="number"></td>
+                <td><input style="width: 70px; height: 22px; font-size: 20px; margin-top: -4px;" type="number"></td>
+              </tr>
+          </table>
         </div>
     </div>
 </div>

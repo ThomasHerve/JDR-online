@@ -6,6 +6,19 @@ th {
     padding: 10px;
 }
 
+.titre {
+    background-color: grey;
+    border:5px solid black;
+    color: white;
+    height: 15%;
+    text-align:left;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
 
 /*##################################*/
 .card {
