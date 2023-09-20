@@ -10,9 +10,9 @@
                       <th>Niveau</th>
                     </tr>
                     <tr>
-                      <td><input class="input-name" type="text"></td>
-                      <td><input class="input-origine" type="text"></td>
-                      <td><input class="input-level" type="number"></td>
+                      <td><input [(ngModel)]="nom" (ngModelChange)="save()" class="input-name" type="text"></td>
+                      <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="input-origine" type="text"></td>
+                      <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="input-level" type="number"></td>
                     </tr>     
                 </table>
             </div>
@@ -22,7 +22,7 @@
                       <th *ngFor="let element of stats">{{element}}</th>
                     </tr>
                     <tr>
-                      <td *ngFor="let element of stats"><input class="input-stat" type="number"></td>
+                      <td *ngFor="let element of stats"><input [(ngModel)]="TODO" (ngModelChange)="save()" class="input-stat" type="number"></td>
                     </tr>     
                 </table>
             </div>
@@ -32,7 +32,7 @@
                       <th >Points de chance</th>
                     </tr>
                     <tr>
-                      <td><input class="input-chance" type="number"></td>
+                      <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="input-chance" type="number"></td>
                     </tr>     
                 </table>
             </div>
@@ -54,8 +54,8 @@
                       </tr>
                       <tr *ngFor="let element of competences">
                         <td>{{element[0]}} [{{element[1]}}]</td>
-                        <td><input class="input-atout" type="checkbox"></td>
-                        <td><input class="input-rang" type="number"></td>
+                        <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="input-atout" type="checkbox"></td>
+                        <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="input-rang" type="number"></td>
                       </tr>
                   </table>
                   <div style="display: flex; flex-direction: column; flex: 1 1 auto">
@@ -65,7 +65,7 @@
                                 <th >DEFENSE</th>
                               </tr>
                           </table>
-                          <input class="defense-input" type="number">
+                          <input [(ngModel)]="TODO" (ngModelChange)="save()" class="defense-input" type="number">
                       </div>
                       <div class="main-equipment">
                         <div *ngFor="let element of equipment" class="equipment-row">
@@ -75,13 +75,13 @@
                             </tr>
                             <tr>
                               <td>RD Phy</td>
-                              <td><input class="equipment-input" type="number"></td>
+                              <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="equipment-input" type="number"></td>
                               <td>RD Poi</td>
-                              <td><input class="equipment-input" type="number"></td>
+                              <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="equipment-input" type="number"></td>
                             </tr>
                             <tr>
-                              <td>RD Phy</td>
-                              <td><input class="equipment-input" type="number"></td>
+                              <td>RD Mag</td>
+                              <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="equipment-input" type="number"></td>
                               <td></td>
                               <td></td>
                             </tr> 
@@ -111,17 +111,64 @@
               <tr *ngFor="let arme of armes">
                 <td><textarea  rows="2" cols="13" style="font-size: 10px;"></textarea></td>
                 <td><textarea  rows="2" cols="18" style="font-size: 10px;"></textarea></td>
-                <td><input style="width: 40px; height: 22px; font-size: 20px; margin-top: -4px;" type="number"></td>
-                <td><input type="checkbox" style="margin-left: 30px"></td>
-                <td><input style="width: 80px; height: 22px; font-size: 20px; margin-top: -4px;" type="number"></td>
+                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 40px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
+                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" type="checkbox" style="margin-left: 30px"></td>
+                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 80px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
                 <td><textarea  rows="2" cols="13" style="font-size: 10px;"></textarea></td>
                 <td><textarea  rows="2" cols="13" style="font-size: 10px;"></textarea></td>
-                <td><input style="width: 75px; height: 22px; font-size: 20px; margin-top: -4px;" type="number"></td>
+                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 75px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
                 <td><textarea  rows="2" cols="13" style="font-size: 10px;"></textarea></td>
-                <td><input style="width: 105px; height: 22px; font-size: 20px; margin-top: -4px;" type="number"></td>
-                <td><input style="width: 70px; height: 22px; font-size: 20px; margin-top: -4px;" type="number"></td>
+                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 105px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
+                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 70px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
               </tr>
           </table>
+        </div>
+        <div style="display: flex; flex-direction: row; width: 100%; flex-flow: row;">
+          <div style="display: flex; flex-direction: column; margin-left: 50px; margin-right: 40px;">
+            <div class="titre" style="text-align: center;">
+              TALISMAN
+            </div>
+            <table style="margin-left: 0px;">
+              <tr>
+                <th >NOM</th>
+                <th>BONUS</th>
+              </tr>
+              <tr *ngFor="let talisman of talismans">
+                <td><textarea  rows="4" cols="20" style="font-size: 15px;"></textarea></td>
+                <td><textarea  rows="4" cols="20" style="font-size: 15px;"></textarea></td>
+              </tr>
+          </table>
+          <div class="titre" style="text-align: center;">
+            EQUIPEMENT
+          </div>
+          <table style="margin-left: 0px;">
+            <tr>
+              <th >OBJET</th>
+              <th>KG</th>
+            </tr>
+            <tr *ngFor="let talisman of talismans">
+              <td><textarea rows="4" cols="40" style="font-size: 15px;"></textarea></td>
+              <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 40px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
+            </tr>
+        </table>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <div class="titre" style="text-align: center;">
+              APTITUDES ET TRAITS
+            </div>
+            <table style="margin-left: 0px;">
+              <tr>
+                <th >NOM</th>
+                <th>RANG</th>
+                <th>EFFET</th>
+              </tr>
+              <tr *ngFor="let aptitude of aptitudes">
+                <td><textarea  rows="4" cols="20" style="font-size: 15px;"></textarea></td>
+                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 80px; height: 72px; font-size: 30px; margin-top: -4px; text-align: center;" type="number"></td>
+                <td><textarea  rows="4" cols="20" style="font-size: 15px;"></textarea></td>
+              </tr>
+          </table>
+          </div>
         </div>
     </div>
 </div>
