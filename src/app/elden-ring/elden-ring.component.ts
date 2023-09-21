@@ -195,6 +195,36 @@ export class EldenRingComponent implements OnInit {
   
     document.body.removeChild(element);
   }
+
+  upload(e: any) {
+    let file = e.target!.files[0]
+    let fileReader = new FileReader();
+    fileReader.onload = (e) => {
+      let result = fileReader.result?.toString();
+
+      // @ts-ignore
+      result = JSON.parse(result);
+      this.apply_result(result);
+    };
+
+    fileReader.readAsText(file)    
+  }
+
+  apply_result(result: any) {
+    this.stats = result.stats
+    this.competences = result.competences
+    this.equipment = result.equipment
+    this.armes = result.armes
+    this.aptitudes = result.aptitudes
+    this.talismans = result.talismans
+    this.equipment_list = result.equipment_list
+    this.nom = result.nom
+    this.origine = result.origine
+    this.niveau = result.niveau
+    this.runes = result.runes
+    this.point_chance = result.point_chance
+    this.defense = result.defense
+  }
   
 
   save() {
