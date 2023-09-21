@@ -8,21 +8,23 @@
                       <th>Nom du personnage</th>
                       <th>Origine</th>
                       <th>Niveau</th>
+                      <th>Runes</th>
                     </tr>
                     <tr>
                       <td><input [(ngModel)]="nom" (ngModelChange)="save()" class="input-name" type="text"></td>
-                      <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="input-origine" type="text"></td>
-                      <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="input-level" type="number"></td>
+                      <td><input [(ngModel)]="origine" (ngModelChange)="save()" class="input-origine" type="text"></td>
+                      <td><input [(ngModel)]="niveau" (ngModelChange)="save()" class="input-level" type="number"></td>
+                      <td><input [(ngModel)]="runes" (ngModelChange)="save()" class="input-runes" type="number"></td>
                     </tr>     
                 </table>
             </div>
             <div class = "stats">
                 <table style="margin-left: 10px;">
                     <tr>
-                      <th *ngFor="let element of stats">{{element}}</th>
+                      <th *ngFor="let element of stats">{{element.name}}</th>
                     </tr>
                     <tr>
-                      <td *ngFor="let element of stats"><input [(ngModel)]="TODO" (ngModelChange)="save()" class="input-stat" type="number"></td>
+                      <td *ngFor="let element of stats"><input [(ngModel)]="element.value" (ngModelChange)="save()" class="input-stat" type="number"></td>
                     </tr>     
                 </table>
             </div>
@@ -32,7 +34,7 @@
                       <th >Points de chance</th>
                     </tr>
                     <tr>
-                      <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="input-chance" type="number"></td>
+                      <td><input [(ngModel)]="point_chance" (ngModelChange)="save()" class="input-chance" type="number"></td>
                     </tr>     
                 </table>
             </div>
@@ -53,9 +55,9 @@
                         <th>RANG</th>
                       </tr>
                       <tr *ngFor="let element of competences">
-                        <td>{{element[0]}} [{{element[1]}}]</td>
-                        <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="input-atout" type="checkbox"></td>
-                        <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="input-rang" type="number"></td>
+                        <td>{{element.name[0]}} [{{element.name[1]}}]</td>
+                        <td><input [(ngModel)]="element.atout" (ngModelChange)="save()" class="input-atout" type="checkbox"></td>
+                        <td><input [(ngModel)]="element.value" (ngModelChange)="save()" class="input-rang" type="number"></td>
                       </tr>
                   </table>
                   <div style="display: flex; flex-direction: column; flex: 1 1 auto">
@@ -65,23 +67,23 @@
                                 <th >DEFENSE</th>
                               </tr>
                           </table>
-                          <input [(ngModel)]="TODO" (ngModelChange)="save()" class="defense-input" type="number">
+                          <input [(ngModel)]="defense" (ngModelChange)="save()" class="defense-input" type="number">
                       </div>
                       <div class="main-equipment">
                         <div *ngFor="let element of equipment" class="equipment-row">
                           <table *ngFor="let e of element" style="margin-left: 30px;">
                             <tr>
-                              <th colspan="4" style="text-align: center">{{e}}</th>
+                              <th colspan="4" style="text-align: center">{{e.name}}</th>
                             </tr>
                             <tr>
                               <td>RD Phy</td>
-                              <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="equipment-input" type="number"></td>
+                              <td><input [(ngModel)]="e.stats.phy" (ngModelChange)="save()" class="equipment-input" type="number"></td>
                               <td>RD Poi</td>
-                              <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="equipment-input" type="number"></td>
+                              <td><input [(ngModel)]="e.stats.poi" (ngModelChange)="save()" class="equipment-input" type="number"></td>
                             </tr>
                             <tr>
                               <td>RD Mag</td>
-                              <td><input [(ngModel)]="TODO" (ngModelChange)="save()" class="equipment-input" type="number"></td>
+                              <td><input [(ngModel)]="e.stats.mag" (ngModelChange)="save()" class="equipment-input" type="number"></td>
                               <td></td>
                               <td></td>
                             </tr> 
@@ -109,17 +111,17 @@
                 <th>POIDS</th>
               </tr>
               <tr *ngFor="let arme of armes">
-                <td><textarea  rows="2" cols="13" style="font-size: 10px;"></textarea></td>
-                <td><textarea  rows="2" cols="18" style="font-size: 10px;"></textarea></td>
-                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 40px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
-                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" type="checkbox" style="margin-left: 30px"></td>
-                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 80px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
-                <td><textarea  rows="2" cols="13" style="font-size: 10px;"></textarea></td>
-                <td><textarea  rows="2" cols="13" style="font-size: 10px;"></textarea></td>
-                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 75px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
-                <td><textarea  rows="2" cols="13" style="font-size: 10px;"></textarea></td>
-                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 105px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
-                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 70px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
+                <td><textarea  [(ngModel)]="arme.nom" (ngModelChange)="save()" rows="2" cols="13" style="font-size: 10px;"></textarea></td>
+                <td><textarea  [(ngModel)]="arme.competence" (ngModelChange)="save()" rows="2" cols="18" style="font-size: 10px;"></textarea></td>
+                <td><input [(ngModel)]="arme.sr" (ngModelChange)="save()" style="width: 40px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
+                <td><input [(ngModel)]="arme.atout" (ngModelChange)="save()" type="checkbox" style="margin-left: 30px"></td>
+                <td><input [(ngModel)]="arme.degat" (ngModelChange)="save()" style="width: 80px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
+                <td><textarea  [(ngModel)]="arme.effet" (ngModelChange)="save()" rows="2" cols="13" style="font-size: 10px;"></textarea></td>
+                <td><textarea  [(ngModel)]="arme.type" (ngModelChange)="save()" rows="2" cols="13" style="font-size: 10px;"></textarea></td>
+                <td><input [(ngModel)]="arme.portee" (ngModelChange)="save()" style="width: 75px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
+                <td><textarea  [(ngModel)]="arme.qualites" (ngModelChange)="save()" rows="2" cols="13" style="font-size: 10px;"></textarea></td>
+                <td><input [(ngModel)]="arme.munitions" (ngModelChange)="save()" style="width: 105px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
+                <td><input [(ngModel)]="arme.poids" (ngModelChange)="save()" style="width: 70px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
               </tr>
           </table>
         </div>
@@ -134,8 +136,8 @@
                 <th>BONUS</th>
               </tr>
               <tr *ngFor="let talisman of talismans">
-                <td><textarea  rows="4" cols="20" style="font-size: 15px;"></textarea></td>
-                <td><textarea  rows="4" cols="20" style="font-size: 15px;"></textarea></td>
+                <td><textarea [(ngModel)]="talisman.nom" (ngModelChange)="save()" rows="4" cols="23" style="font-size: 15px;"></textarea></td>
+                <td><textarea [(ngModel)]="talisman.bonus" (ngModelChange)="save()" rows="4" cols="23" style="font-size: 15px;"></textarea></td>
               </tr>
           </table>
           <div class="titre" style="text-align: center;">
@@ -144,11 +146,11 @@
           <table style="margin-left: 0px;">
             <tr>
               <th >OBJET</th>
-              <th>KG</th>
+              <th>NMB</th>
             </tr>
-            <tr *ngFor="let talisman of talismans">
-              <td><textarea rows="4" cols="40" style="font-size: 15px;"></textarea></td>
-              <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 40px; height: 22px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
+            <tr *ngFor="let equipment of equipment_list">
+              <td><textarea [(ngModel)]="equipment.objet" (ngModelChange)="save()" rows="4" cols="42" style="font-size: 15px;"></textarea></td>
+              <td><input [(ngModel)]="equipment.nmb" (ngModelChange)="save()" style="width: 48px; height: 72px; font-size: 20px; margin-top: -4px;text-align: center;" type="number"></td>
             </tr>
         </table>
           </div>
@@ -163,9 +165,9 @@
                 <th>EFFET</th>
               </tr>
               <tr *ngFor="let aptitude of aptitudes">
-                <td><textarea  rows="4" cols="20" style="font-size: 15px;"></textarea></td>
-                <td><input [(ngModel)]="TODO" (ngModelChange)="save()" style="width: 80px; height: 72px; font-size: 30px; margin-top: -4px; text-align: center;" type="number"></td>
-                <td><textarea  rows="4" cols="20" style="font-size: 15px;"></textarea></td>
+                <td><textarea [(ngModel)]="aptitude.nom" (ngModelChange)="save()" rows="4" cols="20" style="font-size: 15px;"></textarea></td>
+                <td><input [(ngModel)]="aptitude.rang" (ngModelChange)="save()" style="width: 80px; height: 72px; font-size: 30px; margin-top: -4px; text-align: center;" type="number"></td>
+                <td><textarea [(ngModel)]="aptitude.effet" (ngModelChange)="save()" rows="4" cols="20" style="font-size: 15px;"></textarea></td>
               </tr>
           </table>
           </div>

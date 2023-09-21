@@ -62,7 +62,7 @@ th {
     height: 67px; /* replace with your input's height */
     outline: none;
     font-size: 40px;
-    width: 250px;
+    width: 200px;
 }
 
 .input-level {
@@ -70,7 +70,15 @@ th {
     height: 67px; /* replace with your input's height */
     outline: none;
     font-size: 40px;
-    width: 150px;
+    width: 100px;
+}
+
+.input-runes {
+    text-align: center;
+    height: 67px; /* replace with your input's height */
+    outline: none;
+    font-size: 20px;
+    width: 100px;
 }
 
 /*##################################*/
