@@ -75,6 +75,8 @@ export class EldenRingComponent implements OnInit {
 
 
   constructor(private localStorage: LocalStorageService) { 
+    this.pv = this.localStorage.retrieve("pv") || '';
+    this.action = this.localStorage.retrieve("action") || '';
     this.nom = this.localStorage.retrieve("nom") || '';
     this.origine = this.localStorage.retrieve("origine") || '';
     this.niveau = this.localStorage.retrieve("niveau") || '';
@@ -155,6 +157,8 @@ export class EldenRingComponent implements OnInit {
 
   }
 
+  pv = ""
+  action = ""
   nom = ""
   origine = ""
   niveau = ""
@@ -176,7 +180,9 @@ export class EldenRingComponent implements OnInit {
       niveau: this.niveau,
       runes: this.runes,
       point_chance: this.point_chance,
-      defense: this.defense
+      defense: this.defense,
+      pv: this.pv,
+      action: this.action
     }
 
     this.download(this.nom + ".json", JSON.stringify(output))
@@ -224,10 +230,14 @@ export class EldenRingComponent implements OnInit {
     this.runes = result.runes
     this.point_chance = result.point_chance
     this.defense = result.defense
+    this.pv = result.pv
+    this.action = result.action
   }
   
 
   save() {
+    this.localStorage.store("pv", this.pv);
+    this.localStorage.store("action", this.action);
     this.localStorage.store("nom", this.nom);
     this.localStorage.store("origine", this.origine);
     this.localStorage.store("niveau", this.niveau);

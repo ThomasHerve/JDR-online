@@ -19,6 +19,18 @@
                 </table>
             </div>
             <div class = "stats">
+              <table style="margin-left: -720px;">
+                  <tr>
+                    <th>PV</th>
+                    <th>ACTION</th>
+                  </tr>
+                  <tr>
+                    <td><input [(ngModel)]="pv" (ngModelChange)="save()" class="input-stat" type="number"></td>
+                    <td><input [(ngModel)]="action" (ngModelChange)="save()" class="input-stat" type="number"></td>
+                  </tr>     
+              </table>
+            </div>
+            <div class = "stats">
                 <table style="margin-left: 10px;">
                     <tr>
                       <th *ngFor="let element of stats">{{element.name}}</th>
