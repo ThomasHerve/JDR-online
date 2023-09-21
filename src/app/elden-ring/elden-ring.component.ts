@@ -25,7 +25,7 @@ export class EldenRingComponent implements OnInit {
     {name:["Magie", "INT"], value:"", atout: false},
     {name:["Armes de corps à corps", "FOR"], value:"", atout: false},
     {name:["Armes légères", "AGI"], value:"", atout: false},
-    {name:["Armes lourdes", "END"], value:"", atout: false},
+    {name:["Armes lourdes", "FOR"], value:"", atout: false},
     {name:["Athlétisme", "FOR"], value:"", atout: false},
     {name:["Crochetage", "PER"], value:"", atout: false},
     {name:["Discours", "CHR"], value:"", atout: false},
