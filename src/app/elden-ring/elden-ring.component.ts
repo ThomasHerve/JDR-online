@@ -8,10 +8,6 @@ import { LocalStorageService } from 'ngx-webstorage';
 })
 export class EldenRingComponent implements OnInit {
 
-  TODO = "0"
-  TODO_NUMBER = 0
-  TODO_CHEKBOX = false
-
   stats = [
     {name: "FORCE", value: ""}, 
     {name:"PERCEPTION", value:""}, 
@@ -165,6 +161,41 @@ export class EldenRingComponent implements OnInit {
   runes = ""
   point_chance = ""
   defense = ""
+
+  public save_json() {
+    let output = {
+      stats: this.stats,
+      competences: this.competences,
+      equipment: this.equipment,
+      armes: this.armes,
+      aptitudes: this.aptitudes,
+      talismans: this.talismans,
+      equipment_list: this.equipment_list,
+      nom: this.nom,
+      origine: this.origine,
+      niveau: this.niveau,
+      runes: this.runes,
+      point_chance: this.point_chance,
+      defense: this.defense
+    }
+
+    this.download(this.nom + ".json", JSON.stringify(output))
+
+  }
+
+  download(filename: string, text: string) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+  }
+  
 
   save() {
     this.localStorage.store("nom", this.nom);

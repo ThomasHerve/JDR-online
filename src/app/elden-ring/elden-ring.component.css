@@ -178,3 +178,17 @@ th {
     width: 60px;
     font-size: medium;
 }
+
+.save_button {
+    background-color: grey;
+    border:5px solid black;
+    color: white;
+}
+
+.save_button:hover {
+    background-color: darkgrey;
+}
+
+.save_button:active {
+    background-color: black;
+}
